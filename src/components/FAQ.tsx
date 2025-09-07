@@ -39,7 +39,7 @@ export const FAQ = ({ lang }: { lang: Lang }) => {
   const t = copy[lang];
   return (
     <Box as="section" id="faq" py={24} px={4} w="100%">
-      <Heading textAlign="center" mb={10}>
+      <Heading textAlign="center" mb={10} color="orange.500">
         {t.title}
       </Heading>
       <Accordion allowToggle maxW="800px" mx="auto">

@@ -68,14 +68,14 @@ export const Contact = ({ lang }: { lang: Lang }) => {
       py={24}
       px={4}
       w="100%"
-      bg="gray.50"
-      _dark={{ bg: "gray.900" }}
+      bgGradient="linear(to-r, teal.500, green.400)"
+      color="white"
     >
       <Heading textAlign="center" mb={10}>
         {t.title}
       </Heading>
       <SimpleGrid columns={[1, 2]} spacing={10} maxW="900px" mx="auto">
-        <Box p={8} shadow="md" borderRadius="xl" bg="white" _dark={{ bg: "gray.700" }}>
+        <Box p={8} shadow="lg" borderRadius="xl" bg="white" color="gray.800">
           <Stack spacing={4}>
             <FormControl id="name">
               <FormLabel>{t.name}</FormLabel>
@@ -106,16 +106,16 @@ export const Contact = ({ lang }: { lang: Lang }) => {
               />
             </FormControl>
             <Stack direction={["column", "row"]} spacing={4} pt={2}>
-              <Button colorScheme="teal" onClick={handleEmail}>
+              <Button colorScheme="teal" onClick={handleEmail} flex={1}>
                 {t.sendEmail}
               </Button>
-              <Button colorScheme="green" onClick={handleWhatsApp}>
+              <Button colorScheme="green" onClick={handleWhatsApp} flex={1}>
                 {t.whatsapp}
               </Button>
             </Stack>
           </Stack>
         </Box>
-        <Stack spacing={6} p={8} shadow="md" borderRadius="xl" bg="white" _dark={{ bg: "gray.700" }}>
+        <Stack spacing={6} p={8} shadow="lg" borderRadius="xl" bg="white" color="gray.800">
           <Stack direction="row" align="center">
             <EmailIcon />
             <Text>{EMAIL}</Text>

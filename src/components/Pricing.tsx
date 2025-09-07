@@ -28,7 +28,7 @@ export const Pricing = ({ lang }: { lang: Lang }) => {
       bg="white"
       _dark={{ bg: "gray.800" }}
     >
-      <Heading textAlign="center" mb={10}>
+      <Heading textAlign="center" mb={10} color="orange.500">
         {t.title}
       </Heading>
       <SimpleGrid columns={[1, 2]} spacing={10} maxW="800px" mx="auto">

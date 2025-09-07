@@ -8,7 +8,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 import { Lang } from "./LanguageToggle";
+
+const MotionBox = motion(Box);
 
 const copy = {
   en: {
@@ -55,18 +58,19 @@ export const Testimonials = ({ lang }: { lang: Lang }) => {
       bg="gray.50"
       _dark={{ bg: "gray.800" }}
     >
-      <Heading textAlign="center" mb={10}>
+      <Heading textAlign="center" mb={10} color="teal.600">
         {t.title}
       </Heading>
       <SimpleGrid columns={[1, 2]} spacing={8} maxW="800px" mx="auto">
         {t.quotes.map((q, i) => (
-          <Box
+          <MotionBox
             key={i}
             p={8}
             shadow="md"
             borderRadius="xl"
             bg="white"
             _dark={{ bg: "gray.700" }}
+            whileHover={{ y: -5 }}
           >
             <Stack direction="row" spacing={4} align="center">
               <Avatar name={q.name} src={q.avatar} />
@@ -84,7 +88,7 @@ export const Testimonials = ({ lang }: { lang: Lang }) => {
             <Text mt={4} fontStyle="italic">
               "{q.text}"
             </Text>
-          </Box>
+          </MotionBox>
         ))}
       </SimpleGrid>
     </Box>

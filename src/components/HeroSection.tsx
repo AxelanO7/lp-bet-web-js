@@ -1,4 +1,5 @@
 import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { Lang } from "./LanguageToggle";
 
 const copy = {
@@ -13,6 +14,8 @@ const copy = {
     cta: "Pesan Sekarang",
   },
 };
+
+const MotionStack = motion(Stack);
 
 export const HeroSection = ({ lang }: { lang: Lang }) => {
   const t = copy[lang];
@@ -31,17 +34,31 @@ export const HeroSection = ({ lang }: { lang: Lang }) => {
       bgPos="center"
       bgRepeat="no-repeat"
     >
-      <Stack spacing={6} align="center" justify="center" h="100%">
+      <MotionStack
+        spacing={6}
+        align="center"
+        justify="center"
+        h="100%"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <Heading fontSize={["3xl", "5xl"]} maxW="3xl">
           {t.title}
         </Heading>
         <Text fontSize={["md", "xl"]} maxW="2xl">
           {t.subtitle}
         </Text>
-        <Button as="a" href="#contact" colorScheme="teal" size="lg" shadow="md">
+        <Button
+          as="a"
+          href="#tours"
+          colorScheme="teal"
+          size="lg"
+          shadow="md"
+        >
           {t.cta}
         </Button>
-      </Stack>
+      </MotionStack>
     </Box>
   );
 };

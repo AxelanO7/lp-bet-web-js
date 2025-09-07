@@ -9,9 +9,6 @@ interface Props {
 
 export const LanguageToggle = ({ lang, setLang }: Props) => (
   <Button
-    position="fixed"
-    top="1rem"
-    right="1rem"
     size="sm"
     colorScheme="teal"
     shadow="md"
