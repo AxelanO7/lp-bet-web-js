@@ -26,7 +26,7 @@ const IndexPage = () => {
       <FAQ lang={lang} />
       <Contact lang={lang} />
       <Footer justifyContent="center">
-        <Text>© 2024 Balieternatours</Text>
+        <Text>© {new Date().getFullYear()} Balieternatours</Text>
       </Footer>
     </Container>
   );
