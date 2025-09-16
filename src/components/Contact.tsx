@@ -32,7 +32,7 @@ const copy = {
     email: "Email",
     message: "Pesan",
     sendEmail: "Kirim Email",
-    whatsapp: "Hubungi via WhatsApp",
+    whatsapp: "Chat via WA",
   },
 };
 
@@ -115,7 +115,14 @@ export const Contact = ({ lang }: { lang: Lang }) => {
             </Stack>
           </Stack>
         </Box>
-        <Stack spacing={6} p={8} shadow="lg" borderRadius="xl" bg="white" color="gray.800">
+        <Stack
+          spacing={6}
+          p={8}
+          shadow="lg"
+          borderRadius="xl"
+          bg="white"
+          color="gray.800"
+        >
           <Stack direction="row" align="center">
             <EmailIcon />
             <Text>{EMAIL}</Text>
