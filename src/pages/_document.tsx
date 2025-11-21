@@ -1,14 +1,11 @@
-import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import { ColorModeScript } from "@chakra-ui/react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
-export default class Document extends NextDocument {
+class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en" suppressHydrationWarning>
         <Head />
-        <body>
-          {/* Make Color mode to persists when you refresh the page. */}
-          <ColorModeScript />
+        <body className="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
           <Main />
           <NextScript />
         </body>
@@ -16,3 +13,5 @@ export default class Document extends NextDocument {
     );
   }
 }
+
+export default MyDocument;

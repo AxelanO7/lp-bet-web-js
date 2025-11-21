@@ -1,69 +1,111 @@
-import { Box, Button, Heading, Stack, Text } from "@chakra-ui/react";
+import { Button, Chip } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import { ArrowRight, Play } from "lucide-react";
+import Link from "next/link";
 import { Lang } from "./LanguageToggle";
 
-const copy = {
+const heroCopy: Record<Lang, { title: string; subtitle: string; cta: string; secondary: string }> = {
   en: {
-    title: "Best fast boat tickets to Nusa Penida & Lembongan",
-    subtitle: "Flexible schedules and top service",
-    cta: "Book Now",
+    title: "Sail Bali in cinematic luxury",
+    subtitle: "Premium fast boat, curated tours, and concierge-level care to Nusa Penida, Lembongan, and Bali's hidden gems.",
+    cta: "Plan my journey",
+    secondary: "Watch the experience",
   },
   id: {
-    title: "Harga tiket boat Nusa Penida & Lembongan terbaik",
-    subtitle: "Jadwal fleksibel dan pelayanan terbaik",
-    cta: "Pesan Sekarang",
+    title: "Jelajah Bali dengan kemewahan sinematik",
+    subtitle: "Fast boat premium, tur kurasi, dan layanan concierge ke Nusa Penida, Lembongan, dan surga tersembunyi Bali.",
+    cta: "Rancang perjalanan", 
+    secondary: "Lihat pengalaman",
   },
   zh: {
-    title: "最佳前往努沙佩尼达和蓝梦岛的快艇票",
-    subtitle: "灵活班次与优质服务",
-    cta: "立即预订",
+    title: "以电影级奢华方式畅游巴厘",
+    subtitle: "高端快艇、精心策划行程与礼宾式服务，直抵努沙佩尼达、蓝梦岛与巴厘秘境。",
+    cta: "规划行程",
+    secondary: "观看体验",
   },
 };
 
-const MotionStack = motion(Stack);
-
 export const HeroSection = ({ lang }: { lang: Lang }) => {
-  const t = copy[lang];
+  const t = heroCopy[lang];
+
   return (
-    <Box
-      as="section"
-      position="relative"
-      textAlign="center"
-      color="white"
-      py={[32, 40]}
-      px={4}
-      w="100%"
-      minH="70vh"
-      bgImage="linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80')"
-      bgSize="cover"
-      bgPos="center"
-      bgRepeat="no-repeat"
-    >
-      <MotionStack
-        spacing={6}
-        align="center"
-        justify="center"
-        h="100%"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <Heading fontSize={["3xl", "5xl"]} maxW="3xl">
-          {t.title}
-        </Heading>
-        <Text fontSize={["md", "xl"]} maxW="2xl">
-          {t.subtitle}
-        </Text>
-        <Button
-          as="a"
-          href="#tours"
-          colorScheme="teal"
-          size="lg"
-          shadow="md"
+    <section id="top" className="relative isolate overflow-hidden bg-slate-900 text-white">
+      <div className="absolute inset-0">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="https://images.unsplash.com/photo-1526481280695-3c469c2f3a32?auto=format&fit=crop&w=1600&q=80"
         >
-          {t.cta}
-        </Button>
-      </MotionStack>
-    </Box>
+          <source
+            src="https://storage.googleapis.com/coverr-main/mp4/Mt_Batur.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div className="absolute inset-0 hero-gradient" />
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-24 pt-36">
+        <div className="flex flex-col gap-8 lg:max-w-3xl">
+          <Chip color="primary" variant="shadow" className="w-fit bg-white/20 text-white backdrop-blur">
+            Bali · Nusa Penida · Lembongan
+          </Chip>
+          <motion.h1
+            className="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {t.title}
+          </motion.h1>
+          <motion.p
+            className="max-w-2xl text-lg text-slate-100/90"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
+          >
+            {t.subtitle}
+          </motion.p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button
+              as={Link}
+              href="#tours"
+              size="lg"
+              radius="full"
+              className="bg-sunset-gradient text-white shadow-xl hover:shadow-2xl"
+              endContent={<ArrowRight className="h-4 w-4" />}
+            >
+              {t.cta}
+            </Button>
+            <Button
+              as={Link}
+              href="#gallery"
+              size="lg"
+              radius="full"
+              variant="bordered"
+              className="glass-card border-white/40 text-white"
+              startContent={<Play className="h-4 w-4" />}
+            >
+              {t.secondary}
+            </Button>
+          </div>
+          <div className="grid grid-cols-2 gap-6 text-sm text-slate-100/80 sm:grid-cols-4">
+            {[
+              { label: "islands", value: "14" },
+              { label: "luxury partners", value: "30+" },
+              { label: "5★ reviews", value: "1,200" },
+              { label: "avg. response", value: "5 min" },
+            ].map((item) => (
+              <div key={item.label} className="glass-card rounded-xl px-4 py-3 text-center">
+                <p className="text-lg font-semibold text-white">{item.value}</p>
+                <p className="text-xs uppercase tracking-wide text-slate-200/80">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-x-0 bottom-[-1px] h-16 bg-gradient-to-b from-transparent to-slate-50 dark:to-slate-950" />
+    </section>
   );
 };
