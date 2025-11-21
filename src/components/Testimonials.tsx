@@ -44,6 +44,21 @@ const copy = {
       },
     ],
   },
+  zh: {
+    title: "评价",
+    quotes: [
+      {
+        name: "小李",
+        text: "服务很棒！",
+        avatar: "https://i.pravatar.cc/150?img=5",
+      },
+      {
+        name: "安娜",
+        text: "预订简单，工作人员很亲切。",
+        avatar: "https://i.pravatar.cc/150?img=6",
+      },
+    ],
+  },
 };
 
 export const Testimonials = ({ lang }: { lang: Lang }) => {

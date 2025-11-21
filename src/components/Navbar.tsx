@@ -22,6 +22,16 @@ const copy = {
       { label: "Kontak", href: "#contact" },
     ],
   },
+  zh: {
+    items: [
+      { label: "行程", href: "#tours" },
+      { label: "图库", href: "#gallery" },
+      { label: "价格", href: "#pricing" },
+      { label: "评价", href: "#testimonials" },
+      { label: "常见问题", href: "#faq" },
+      { label: "联系我们", href: "#contact" },
+    ],
+  },
 };
 
 interface Props {

@@ -45,6 +45,26 @@ const copy = {
       },
     ],
   },
+  zh: {
+    title: "热门行程",
+    items: [
+      {
+        title: "努沙佩尼达探险",
+        desc: "悬崖、海滩与隐秘美景。",
+        img: "https://images.unsplash.com/photo-1546484959-fecba6dcbf31?auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        title: "乌布梯田",
+        desc: "绿色田园与浓厚文化气息。",
+        img: "https://images.pexels.com/photos/210134/pexels-photo-210134.jpeg?auto=compress&cs=tinysrgb&w=800",
+      },
+      {
+        title: "海神庙日落",
+        desc: "矗立海上的标志性庙宇。",
+        img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80",
+      },
+    ],
+  },
 };
 
 export const PopularTours = ({ lang }: { lang: Lang }) => {

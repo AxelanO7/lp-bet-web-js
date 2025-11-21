@@ -14,6 +14,12 @@ const copy = {
     lembongan: "Ke Nusa Lembongan",
     price: "mulai dari Rp150k",
   },
+  zh: {
+    title: "票价",
+    penida: "前往努沙佩尼达",
+    lembongan: "前往努沙蓝梦岛",
+    price: "起价 150k 印尼盾",
+  },
 };
 
 export const Pricing = ({ lang }: { lang: Lang }) => {

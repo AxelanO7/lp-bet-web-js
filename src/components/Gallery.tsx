@@ -11,8 +11,9 @@ const images = [
 ];
 
 const copy = {
-  en: { title: "Gallery" },
-  id: { title: "Galeri" },
+  en: { title: "Gallery", alt: "Bali scenery" },
+  id: { title: "Galeri", alt: "Pemandangan Bali" },
+  zh: { title: "图库", alt: "巴厘岛风景" },
 };
 
 export const Gallery = ({ lang }: { lang: Lang }) => {
@@ -24,7 +25,7 @@ export const Gallery = ({ lang }: { lang: Lang }) => {
       </Heading>
       <SimpleGrid columns={[2, 3]} spacing={4} maxW="6xl" mx="auto">
         {images.map((url, i) => (
-          <Image key={i} src={url} alt="Bali scenery" objectFit="cover" h="150px" w="100%" borderRadius="lg" />
+          <Image key={i} src={url} alt={t.alt} objectFit="cover" h="150px" w="100%" borderRadius="lg" />
         ))}
       </SimpleGrid>
     </Box>

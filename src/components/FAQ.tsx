@@ -33,6 +33,19 @@ const copy = {
       },
     ],
   },
+  zh: {
+    title: "常见问题",
+    items: [
+      {
+        q: "如何预订？",
+        a: "使用下方表单或通过 WhatsApp 联系我们。",
+      },
+      {
+        q: "时间安排灵活吗？",
+        a: "是的，我们提供灵活的出发时间。",
+      },
+    ],
+  },
 };
 
 export const FAQ = ({ lang }: { lang: Lang }) => {

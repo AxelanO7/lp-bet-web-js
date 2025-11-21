@@ -13,6 +13,11 @@ const copy = {
     subtitle: "Jadwal fleksibel dan pelayanan terbaik",
     cta: "Pesan Sekarang",
   },
+  zh: {
+    title: "最佳前往努沙佩尼达和蓝梦岛的快艇票",
+    subtitle: "灵活班次与优质服务",
+    cta: "立即预订",
+  },
 };
 
 const MotionStack = motion(Stack);

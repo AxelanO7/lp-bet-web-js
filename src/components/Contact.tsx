@@ -25,6 +25,8 @@ const copy = {
     message: "Message",
     sendEmail: "Send Email",
     whatsapp: "Chat on WhatsApp",
+    emailPlaceholder: "you@example.com",
+    emailSubject: "Booking Inquiry",
   },
   id: {
     title: "Kontak",
@@ -33,6 +35,18 @@ const copy = {
     message: "Pesan",
     sendEmail: "Kirim Email",
     whatsapp: "Chat via WA",
+    emailPlaceholder: "anda@contoh.com",
+    emailSubject: "Permintaan Pemesanan",
+  },
+  zh: {
+    title: "联系我们",
+    name: "姓名",
+    email: "邮箱",
+    message: "留言",
+    sendEmail: "发送邮件",
+    whatsapp: "通过 WhatsApp 联系",
+    emailPlaceholder: "你@example.com",
+    emailSubject: "预订咨询",
   },
 };
 
@@ -47,16 +61,16 @@ export const Contact = ({ lang }: { lang: Lang }) => {
   };
 
   const handleEmail = () => {
-    const subject = encodeURIComponent("Booking Inquiry");
+    const subject = encodeURIComponent(t.emailSubject);
     const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+      `${t.name}: ${form.name}\n${t.email}: ${form.email}\n\n${form.message}`
     );
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
   };
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n${form.message}`
+      `${t.name}: ${form.name}\n${t.email}: ${form.email}\n${form.message}`
     );
     window.open(`https://wa.me/${WHATSAPP}?text=${text}`);
   };
@@ -93,7 +107,7 @@ export const Contact = ({ lang }: { lang: Lang }) => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder={t.emailPlaceholder}
               />
             </FormControl>
             <FormControl id="message">
