@@ -15,7 +15,7 @@ const testimonials = [
     name: "Michael Tan",
     title: "Tech Founder, Singapore",
     quote:
-      "The Nusa Penida charter was cinematic. Drone footage, sunset deck dinner, and a concierge who handled everything seamlessly.",
+      "The Nusa Penida trip was effortless—fast boat, island guide, sunset dinner, and clear updates on every pickup.",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5,
   },
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Dewi Hartono",
     title: "Wedding Planner, Jakarta",
     quote:
-      "They transformed our elopement shoot into a film set—locations, permits, glam team, all-in. Clients were blown away.",
+      "They secured locations, permits, and transport for our prewedding shoot. Clients loved how organized and relaxed it felt.",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
   },

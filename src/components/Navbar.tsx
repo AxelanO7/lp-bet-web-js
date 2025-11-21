@@ -7,26 +7,32 @@ import { Lang, LanguageToggle } from "./LanguageToggle";
 
 const navCopy = {
   en: [
-    { label: "Tours", href: "#tours" },
-    { label: "Experiences", href: "#gallery" },
+    { label: "Packages", href: "#tours" },
+    { label: "Destinations", href: "#gallery" },
     { label: "Pricing", href: "#pricing" },
     { label: "Stories", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
   ],
   id: [
-    { label: "Tur", href: "#tours" },
-    { label: "Pengalaman", href: "#gallery" },
+    { label: "Paket", href: "#tours" },
+    { label: "Destinasi", href: "#gallery" },
     { label: "Harga", href: "#pricing" },
     { label: "Cerita", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
   ],
   zh: [
-    { label: "行程", href: "#tours" },
-    { label: "体验", href: "#gallery" },
+    { label: "套餐", href: "#tours" },
+    { label: "目的地", href: "#gallery" },
     { label: "价格", href: "#pricing" },
     { label: "故事", href: "#testimonials" },
     { label: "常见问题", href: "#faq" },
   ],
+};
+
+const callCopy: Record<Lang, string> = {
+  en: "Book a call",
+  id: "Hubungi kami",
+  zh: "预约咨询",
 };
 
 interface Props {
@@ -53,7 +59,7 @@ export const Navbar = ({ lang, setLang }: Props) => {
           <span className="h-10 w-10 rounded-full bg-sunset-gradient shadow-lg" />
           <div className="leading-tight">
             <p className="text-sm text-slate-500 dark:text-slate-300">Balieternatours</p>
-            <p className="text-base font-bold">Cinematic Travel</p>
+            <p className="text-base font-bold">Tour & Travel</p>
           </div>
         </Link>
         <nav className="hidden items-center gap-6 text-sm font-medium text-slate-700 dark:text-slate-200 md:flex">
@@ -91,7 +97,7 @@ export const Navbar = ({ lang, setLang }: Props) => {
             className="bg-sunset-gradient text-white shadow-xl hover:shadow-2xl"
             startContent={<PhoneCall className="h-4 w-4" />}
           >
-            Book a call
+            {callCopy[lang]}
           </Button>
         </div>
       </div>

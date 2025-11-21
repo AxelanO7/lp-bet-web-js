@@ -6,22 +6,22 @@ import { Lang } from "./LanguageToggle";
 
 const heroCopy: Record<Lang, { title: string; subtitle: string; cta: string; secondary: string }> = {
   en: {
-    title: "Sail Bali in cinematic luxury",
-    subtitle: "Premium fast boat, curated tours, and concierge-level care to Nusa Penida, Lembongan, and Bali's hidden gems.",
-    cta: "Plan my journey",
-    secondary: "Watch the experience",
+    title: "Bali fast boat & tour packages",
+    subtitle: "Secure seats, hotels, and island trips to Nusa Penida, Lembongan, and Bali in one easy booking.",
+    cta: "Browse packages",
+    secondary: "Talk to our team",
   },
   id: {
-    title: "Jelajah Bali dengan kemewahan sinematik",
-    subtitle: "Fast boat premium, tur kurasi, dan layanan concierge ke Nusa Penida, Lembongan, dan surga tersembunyi Bali.",
-    cta: "Rancang perjalanan", 
-    secondary: "Lihat pengalaman",
+    title: "Paket fast boat & tur Bali",
+    subtitle: "Pesan kursi kapal, hotel, dan trip pulau ke Nusa Penida, Lembongan, dan Bali dalam satu layanan.",
+    cta: "Lihat paket",
+    secondary: "Hubungi tim kami",
   },
   zh: {
-    title: "以电影级奢华方式畅游巴厘",
-    subtitle: "高端快艇、精心策划行程与礼宾式服务，直抵努沙佩尼达、蓝梦岛与巴厘秘境。",
-    cta: "规划行程",
-    secondary: "观看体验",
+    title: "巴厘快艇与旅游套餐",
+    subtitle: "一站式预订船票、酒店与岛屿行程，轻松畅游努沙佩尼达、蓝梦岛与巴厘。",
+    cta: "查看套餐",
+    secondary: "咨询团队",
   },
 };
 
@@ -37,7 +37,7 @@ export const HeroSection = ({ lang }: { lang: Lang }) => {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1526481280695-3c469c2f3a32?auto=format&fit=crop&w=1600&q=80"
+          poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
         >
           <source
             src="https://storage.googleapis.com/coverr-main/mp4/Mt_Batur.mp4"
@@ -80,7 +80,7 @@ export const HeroSection = ({ lang }: { lang: Lang }) => {
             </Button>
             <Button
               as={Link}
-              href="#gallery"
+              href="#contact"
               size="lg"
               radius="full"
               variant="bordered"

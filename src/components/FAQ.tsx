@@ -22,9 +22,9 @@ const faqs = [
       zh: "会提供影像拍摄吗？",
     },
     a: {
-      en: "We collaborate with professional crews for aerial, underwater, and cinematic edits. Ask for the 'Signature' add-on.",
-      id: "Kami berkolaborasi dengan kru profesional untuk aerial, underwater, dan editing sinematik. Gunakan add-on 'Signature'.",
-      zh: "我们与专业团队合作，可拍摄航拍、水下，并提供电影级剪辑，可选择“Signature”增值服务。",
+      en: "We collaborate with professional crews for aerials, underwater shots, and travel-ready edits. Ask for the 'Signature' add-on.",
+      id: "Kami bekerja sama dengan kru profesional untuk aerial, underwater, dan editing siap pakai. Gunakan add-on 'Signature'.",
+      zh: "我们与专业团队合作，提供航拍、水下拍摄及成片剪辑，可选择“Signature”增值服务。",
     },
   },
   {

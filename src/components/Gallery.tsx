@@ -6,7 +6,7 @@ const galleryItems = [
   {
     title: "Kelingking Cliff",
     location: "Nusa Penida",
-    image: "https://images.unsplash.com/photo-1526481280695-3c469c2f3a32?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80",
   },
   {
     title: "Sekumpul Waterfall",
@@ -26,21 +26,20 @@ const galleryItems = [
 ];
 
 export const Gallery = ({ lang }: { lang: Lang }) => {
-  const title =
-    lang === "en" ? "Cinematic frames" : lang === "id" ? "Frame sinematik" : "电影质感镜头";
+  const title = lang === "en" ? "Destination snapshots" : lang === "id" ? "Cuplikan destinasi" : "目的地掠影";
   const subtitle =
     lang === "en"
-      ? "Every itinerary is designed to feel like a scene from a travel film."
+      ? "Preview the sights included in our best-selling Bali and island-hopping packages."
       : lang === "id"
-        ? "Setiap itinerary dirancang terasa seperti adegan film perjalanan."
-        : "每段行程都像电影场景般被精心编排。";
+        ? "Intip lokasi yang masuk dalam paket tur Bali dan island hopping terlaris kami."
+        : "抢先浏览热门巴厘与跳岛套餐中的亮点景点。";
 
   return (
     <section id="gallery" className="bg-slate-100 py-20 dark:bg-slate-900">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-2 text-center">
           <Chip startContent={<Camera className="h-4 w-4" />} variant="flat" color="primary" className="mx-auto">
-            {lang === "en" ? "Visual Story" : lang === "id" ? "Cerita Visual" : "视觉故事"}
+            {lang === "en" ? "Destinations" : lang === "id" ? "Destinasi" : "目的地"}
           </Chip>
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">{title}</h2>
           <p className="text-base text-slate-600 dark:text-slate-300">{subtitle}</p>
