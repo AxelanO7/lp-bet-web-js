@@ -12,14 +12,16 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const ThemeProvider = NextThemesProvider as any;
+
   return (
-    <NextThemesProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <NextUIProvider>
         <div className={`${plusJakarta.variable} font-sans bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 min-h-screen`}>
           <Component {...pageProps} />
         </div>
       </NextUIProvider>
-    </NextThemesProvider>
+    </ThemeProvider>
   );
 }
 
