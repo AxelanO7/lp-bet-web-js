@@ -1,111 +1,75 @@
-import {
-  Avatar,
-  Box,
-  Heading,
-  HStack,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
-import { motion } from "framer-motion";
+import { Avatar, Card, CardBody, Chip } from "@nextui-org/react";
+import { Quote } from "lucide-react";
 import { Lang } from "./LanguageToggle";
 
-const MotionBox = motion(Box);
-
-const copy = {
-  en: {
-    title: "Testimonials",
-    quotes: [
-      {
-        name: "John",
-        text: "Great service!",
-        avatar: "https://i.pravatar.cc/150?img=1",
-      },
-      {
-        name: "Maria",
-        text: "Easy booking and friendly staff.",
-        avatar: "https://i.pravatar.cc/150?img=2",
-      },
-    ],
+const testimonials = [
+  {
+    name: "Sakura Ito",
+    title: "Creative Director, Tokyo",
+    quote:
+      "Every touchpoint felt bespoke. The crew anticipated our needs before we even asked—this is true five-star hospitality at sea.",
+    avatar: "https://randomuser.me/api/portraits/women/79.jpg",
+    rating: 5,
   },
-  id: {
-    title: "Testimoni",
-    quotes: [
-      {
-        name: "Budi",
-        text: "Pelayanan mantap!",
-        avatar: "https://i.pravatar.cc/150?img=3",
-      },
-      {
-        name: "Sari",
-        text: "Mudah memesan dan staf ramah.",
-        avatar: "https://i.pravatar.cc/150?img=4",
-      },
-    ],
+  {
+    name: "Michael Tan",
+    title: "Tech Founder, Singapore",
+    quote:
+      "The Nusa Penida charter was cinematic. Drone footage, sunset deck dinner, and a concierge who handled everything seamlessly.",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    rating: 5,
   },
-  zh: {
-    title: "评价",
-    quotes: [
-      {
-        name: "小李",
-        text: "服务很棒！",
-        avatar: "https://i.pravatar.cc/150?img=5",
-      },
-      {
-        name: "安娜",
-        text: "预订简单，工作人员很亲切。",
-        avatar: "https://i.pravatar.cc/150?img=6",
-      },
-    ],
+  {
+    name: "Dewi Hartono",
+    title: "Wedding Planner, Jakarta",
+    quote:
+      "They transformed our elopement shoot into a film set—locations, permits, glam team, all-in. Clients were blown away.",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    rating: 5,
   },
-};
+];
 
 export const Testimonials = ({ lang }: { lang: Lang }) => {
-  const t = copy[lang];
+  const title = lang === "en" ? "Guest stories" : lang === "id" ? "Cerita tamu" : "贵宾故事";
+  const subtitle =
+    lang === "en"
+      ? "What discerning travelers say about their time with Balieternatours."
+      : lang === "id"
+        ? "Kata para traveler premium tentang pengalaman mereka bersama Balieternatours."
+        : "高端旅客眼中的巴厘专属体验。";
+
   return (
-    <Box
-      as="section"
-      id="testimonials"
-      py={24}
-      px={4}
-      w="100%"
-      bg="gray.50"
-      _dark={{ bg: "gray.800" }}
-    >
-      <Heading textAlign="center" mb={10} color="teal.600">
-        {t.title}
-      </Heading>
-      <SimpleGrid columns={[1, 2]} spacing={8} maxW="800px" mx="auto">
-        {t.quotes.map((q, i) => (
-          <MotionBox
-            key={i}
-            p={8}
-            shadow="md"
-            borderRadius="xl"
-            bg="white"
-            _dark={{ bg: "gray.700" }}
-            whileHover={{ y: -5 }}
-          >
-            <Stack direction="row" spacing={4} align="center">
-              <Avatar name={q.name} src={q.avatar} />
-              <Stack spacing={1}>
-                <Text fontWeight="bold">{q.name}</Text>
-                <HStack spacing={1}>
-                  {Array(5)
-                    .fill(0)
-                    .map((_, i) => (
-                      <StarIcon key={i} color="teal.400" />
-                    ))}
-                </HStack>
-              </Stack>
-            </Stack>
-            <Text mt={4} fontStyle="italic">
-              "{q.text}"
-            </Text>
-          </MotionBox>
-        ))}
-      </SimpleGrid>
-    </Box>
+    <section id="testimonials" className="bg-slate-50 py-24 dark:bg-slate-950">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="flex flex-col gap-2 text-center">
+          <Chip color="secondary" variant="flat" className="mx-auto" startContent={<Quote className="h-4 w-4" />}>
+            {lang === "en" ? "Testimonials" : lang === "id" ? "Testimoni" : "评价"}
+          </Chip>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">{title}</h2>
+          <p className="text-base text-slate-600 dark:text-slate-300">{subtitle}</p>
+        </div>
+        <div className="mt-10 flex gap-6 overflow-x-auto pb-4">
+          {testimonials.map((item) => (
+            <Card key={item.name} className="glass-card min-w-[320px] max-w-md flex-1">
+              <CardBody className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <Avatar src={item.avatar} name={item.name} size="md" />
+                  <div>
+                    <p className="text-base font-semibold text-slate-900 dark:text-white">{item.name}</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-300">{item.title}</p>
+                  </div>
+                </div>
+                <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-200">“{item.quote}”</p>
+                <div className="flex gap-1 text-amber-400">
+                  {Array.from({ length: item.rating }).map((_, idx) => (
+                    <span key={idx}>★</span>
+                  ))}
+                </div>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
